@@ -1,0 +1,24 @@
+.player-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: inherit;
+}
+
+.img-holder{
+  width: 400px;
+  height: 400px;
+  background-color: red
+  ;
+}
+
+.player-container{
+  background-image: url(https://picsum.photos/id/1028/1200);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  height: 50rem;
+  display: flex;
+  align-items: flex-end;
+}
+}
