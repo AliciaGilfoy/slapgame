@@ -12,13 +12,26 @@
   ;
 }
 
-.player-container{
-  background-image: url(https://picsum.photos/id/1028/1200);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: bottom;
+main{
+  display: block;
+  position: relative;
   height: 50rem;
   display: flex;
   align-items: flex-end;
 }
+
+
+main::after {
+  content: "";
+  background-image: url(https://picsum.photos/id/1028/1200);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  opacity: 0.75;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
