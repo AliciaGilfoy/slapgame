@@ -53,10 +53,12 @@ function attack(indexNum) {
   } if (dinoHealth <= 0) {
     document.getElementById("dino-attack-message").className = "attack-message-winner"
     document.getElementById("dino-attack-message").textContent = "You Win!"
+    document.getElementById("attack-buttons").style.pointerEvents = "none"
     playAgain()
   } if (ninjaHealth <= 0) {
     document.getElementById("ninja-attack-message").className = "attack-message-winner"
     document.getElementById("ninja-attack-message").textContent = "Dino Wins!"
+    document.getElementById("attack-buttons").style.pointerEvents = "none"
     playAgain()
   }
 }
@@ -90,9 +92,7 @@ function ninjaKilled() {
   }
   if (ninjaHealth <= 0) {
     document.getElementById("dino-attack-message").textContent = "Dino Killed you!"
-  }
-  if (ninjaHealth < 0) {
-    ninjaHealth = 0
+    players.Ninja.health = 0
   }
 }
 
@@ -105,9 +105,7 @@ function dinoKilled() {
   }
   if (dinoHealth <= 0) {
     document.getElementById("ninja-attack-message").textContent = "Dino Killed!"
-  }
-  if (dinoHealth < 0) {
-    dinoHealth = 0
+    players.Dino.health = 0
   }
 }
 function playAgain() {
