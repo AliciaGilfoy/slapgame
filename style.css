@@ -5,13 +5,6 @@
   width: inherit;
 }
 
-.img-holder{
-  width: 400px;
-  height: 400px;
-  background-color: red
-  ;
-}
-
 main{
   display: block;
   position: relative;
@@ -35,3 +28,136 @@ main::after {
   position: absolute;
   z-index: -1;   
 }
+
+.attack-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: inherit;
+  text-align: center;
+}
+
+.dino-retaliate{
+  width: inherit;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: orangered;
+  border-radius: .25rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: .25rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.dino-buttons-row{
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.player-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dino-player-box{
+  background-image: url(./dinosaur.png);
+  width: 600px; 
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ninja-player-box{
+  background-image: url(./ninja.png);
+  width: 550px; 
+  height: 550px;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.attack-message{
+background-color:rgba(92, 91, 91, 0.945);
+width: fit-content;
+align-self: center;
+border: 1px solid red;
+border-radius: .25rem;
+color: red;
+}
+
+.claws{
+  width: inherit;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: orangered;
+  border-radius: .25rem;
+  border: 3px solid black;
+  outline: 1px solid yellow;
+  outline-width: 1px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: .25rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.bites{
+  width: inherit;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: orangered;
+  border-radius: .25rem;
+  border: 3px solid black;
+  outline: 1px solid yellow;
+  outline-width: 1px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: .25rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.stomps{
+  width: inherit;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: orangered;
+  border-radius: .25rem;
+  border: 3px solid black;
+  outline: 1px solid yellow;
+  outline-width: 1px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: .25rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.attack-message-winner{
+  background-color:rgba(49, 182, 45, 0.945);
+  width: fit-content;
+  align-self: center;
+  border: 1px solid rgb(25, 0, 255);
+  border-radius: .25rem;
+  color: green;
+  }

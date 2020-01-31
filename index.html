@@ -18,23 +18,37 @@
 <body>
   <header class="container-fluid bg-dark">
     <div class="row">
-      <div class="col-12">Slap Game</div>
+      <div class="col-12 text-center text-white h1">Dino vs Ninja</div>
     </div>
   </header>
   <main class="container-fluid player-container">
     <div class="row player-row">
-      <div class="col-4">
-        <img src="./dinosaur.png" width="600px" height="600px" alt="">
+      <div class="col-6 dino-player-box">
+        <h2 class="attack-message" id="ninja-attack-message"></h2>
       </div>
-      <div class="col-4">
-        <div class="img-holder"></div>
+      <div class="col-6 ninja-player-box">
+        <h2 class="attack-message" id="dino-attack-message"></h2>
       </div>
     </div>
   </main>
-  <footer class="container-fluid bg-secondary">
-    <div class="row">
-      <div class="col-12">
-        <button class="btn btn-danger">Slap</button>
+  <footer class="container-fluid bg-dark">
+    <div class="row attack-row">
+      <div class="col-5 player-card">
+        <h3 class="text-white">Dinosaur Retaliates</h3>
+        <h4 class="text-success" id="health-alert-dino">Health:<span id="dino-health">100</span>/100</h4>
+        <div class="dino-retaliate" id="claws">Claw</div>
+        <div class="dino-retaliate" id="bites">Bite</div>
+        <div class="dino-retaliate" id="stomps">Stomp</div>
+      </div>
+      <div class="col-2">
+        <button id="play-again" class="btn-success" onclick="playReset()"></button>
+      </div>
+      <div class="col-5 player-card">
+        <h3 class="text-white">Ninja Attack Choices</h3>
+        <h4 class="text-success" id="health-alert-ninja">Health:<span id="ninja-health">100</span>/100</h4>
+        <button class="btn btn-danger m-1" onclick="attack(0)">Chop</button>
+        <button class="btn btn-danger m-1" onclick="attack(1)">Side Kick</button>
+        <button class="btn btn-danger m-1" onclick="attack(2)">Ninja Stars</button>
       </div>
     </div>
   </footer>
