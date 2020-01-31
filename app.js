@@ -40,25 +40,36 @@ let ninjaHealth = players.Ninja.health
 let dinoHealth = players.Dino.health
 // let newDinoHealth = document.getElementById("dino-health").textContent
 
+
 function attack(indexNum) {
   dinoHealth -= players.Ninja.attack[indexNum].damage
   let pickName = players.Ninja.attack[indexNum].name
   document.getElementById("dino-health").textContent = dinoHealth.toString()
   document.getElementById("ninja-attack-message").textContent = `${pickName}: ${players.Ninja.attack[indexNum].damage} damage`
-  ninjaKilled()
   dinoKilled()
   if (dinoHealth > 0 && ninjaHealth > 0) {
-    setTimeout(dinoAttack, 1000)
-    setTimeout(resetMessage, 1500)
-  } if (dinoHealth <= 0) {
+    setTimeout(dinoAttack, 1000);
+    setTimeout(resetMessage, 3000)
+  }
+}
+// started making changes
+// drawGame()
+
+function drawGame() {
+  // if (dinoHealth > 0 && ninjaHealth > 0) {
+  //   setTimeout(dinoAttack, 1000);
+  //   setTimeout(resetMessage, 3000)
+  if (dinoHealth === 0) {
     document.getElementById("dino-attack-message").className = "attack-message-winner"
     document.getElementById("dino-attack-message").textContent = "You Win!"
     document.getElementById("attack-buttons").style.pointerEvents = "none"
+    document.getElementById("ninja-attack-message").textContent = "Dino Killed!"
     playAgain()
-  } if (ninjaHealth <= 0) {
+  } if (ninjaHealth === 0) {
     document.getElementById("ninja-attack-message").className = "attack-message-winner"
     document.getElementById("ninja-attack-message").textContent = "Dino Wins!"
     document.getElementById("attack-buttons").style.pointerEvents = "none"
+    document.getElementById("dino-attack-message").textContent = "Dino Killed you!"
     playAgain()
   }
 }
@@ -76,6 +87,7 @@ function dinoAttack() {
   document.getElementById("dino-attack-message").textContent = `Dino ${pickName} back : ${players.Dino.attack[pickIndex].damage} damage`
   document.getElementById(pickName).className = pickName
   setTimeout(function () { document.getElementById(pickName).className = "dino-retaliate"; }, 1000);
+  ninjaKilled()
 }
 
 function resetMessage() {
@@ -91,23 +103,37 @@ function ninjaKilled() {
     document.getElementById("health-alert-ninja").className = "font-weight-bold text-danger"
   }
   if (ninjaHealth <= 0) {
-    document.getElementById("dino-attack-message").textContent = "Dino Killed you!"
-    players.Ninja.health = 0
+    // document.getElementById("dino-attack-message").textContent = "Dino Killed you!"
+    ninjaHealth = 0
+    document.getElementById("ninja-health").textContent = ninjaHealth.toString()
+    drawGame()
+    // document.getElementById("ninja-attack-message").className = "attack-message-winner"
+    // document.getElementById("ninja-attack-message").textContent = "Dino Wins!"
+    // document.getElementById("attack-buttons").style.pointerEvents = "none"
+    playAgain()
   }
+  // if (ninjaHealth > 0) {
+  //   setTimeout(resetMessage, 2000)
+  // }
 }
 
 function dinoKilled() {
-  if (dinoHealth <= 50) {
+  if (dinoHealth <= 50 && dinoHealth > 0) {
     document.getElementById("health-alert-dino").className = "font-weight-bold text-warning"
+    // setTimeout(resetMessage, 2000)
   }
-  if (dinoHealth <= 20) {
+  if (dinoHealth <= 20 && dinoHealth > 0) {
     document.getElementById("health-alert-dino").className = "font-weight-bold text-danger"
+    // setTimeout(resetMessage, 2000)
   }
   if (dinoHealth <= 0) {
-    document.getElementById("ninja-attack-message").textContent = "Dino Killed!"
-    players.Dino.health = 0
+    // document.getElementById("ninja-attack-message").textContent = "Dino Killed!"
+    dinoHealth = 0
+    document.getElementById("dino-health").textContent = dinoHealth.toString()
+    drawGame()
   }
 }
+
 function playAgain() {
   document.getElementById("play-again").textContent = "Play Again"
 }
